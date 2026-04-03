@@ -1,74 +1,62 @@
-# React + TypeScript + Vite
+# Ryan Amasora | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Professional developer portfolio built with React, TypeScript, Tailwind CSS, and Vite. Deployed on GitHub Pages.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 18 + TypeScript + Vite
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Devicon (CDN)
+- **Routing:** React Router (HashRouter)
+- **Deployment:** GitHub Pages via GitHub Actions
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Bento grid layout inspired by [bryllim.com](https://bryllim.com/)
+- Dark / Light theme toggle with localStorage persistence
+- Multi-page: Home, Tech Stack, Projects, Certifications
+- Experience & Education timeline
+- Gallery carousel
+- Downloadable CV
+- Fully responsive (mobile, tablet, desktop)
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies (exFAT drive requires --no-bin-links)
+npm install --no-bin-links
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Start dev server
+./node_modules/vite/bin/vite.js dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+./node_modules/vite/bin/vite.js build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> **Note:** This project is on an exFAT filesystem which doesn't support symlinks. Use `./node_modules/vite/bin/vite.js` instead of `npx vite`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Deployment
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Pushing to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`) which builds and deploys to GitHub Pages automatically.
+
+**Setup:**
+1. Create a GitHub repo and push this code to `main`
+2. Go to repo Settings > Pages > Source: "GitHub Actions"
+3. Update `base` in `vite.config.ts` to match your repo name
+
+## Project Structure
+
 ```
-# itzme.Rai
+src/
+  data/          # Static data (profile, skills, projects, journey, certificates)
+  pages/         # Route pages (Home, TechStack, ProjectsPage, CertificationsPage)
+  components/    # Reusable UI components
+  hooks/         # useTheme hook
+  utils/         # cn() helper, asset() path resolver
+public/assets/   # Images (projects, certificates, carousel, profile, CV)
+```
+
+## License
+
+MIT
