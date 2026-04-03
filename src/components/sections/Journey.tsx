@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { SectionHeading } from '../ui/SectionHeading'
-import { journey } from '../../data/journey'
+import { experience as journey } from '../../data/journey'
 
 export function Journey() {
   return (

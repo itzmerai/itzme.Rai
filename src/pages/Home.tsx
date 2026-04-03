@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
 import { skills, skillCategories } from '../data/skills'
