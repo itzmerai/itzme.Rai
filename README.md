@@ -13,7 +13,7 @@ https://itzmerai.github.io/itzme.Rai/
 
 ## Features
 
-- Bento grid layout inspired by [bryllim.com](https://bryllim.com/)
+- Bento grid layout inspired by modern portfolio's
 - Dark / Light theme toggle with localStorage persistence
 - Multi-page: Home, Tech Stack, Projects, Certifications
 - Experience & Education timeline
@@ -22,6 +22,7 @@ https://itzmerai.github.io/itzme.Rai/
 - Fully responsive (mobile, tablet, desktop)
 
 ## Development
+- all commands are specific for my device set-up
 
 ```bash
 # Install dependencies (exFAT drive requires --no-bin-links)
